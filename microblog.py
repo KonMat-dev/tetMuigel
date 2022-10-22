@@ -9,3 +9,12 @@ cli.register(app)
 def make_shell_context():
     return {'db': db, 'User': User, 'Post': Post, 'Message': Message,
             'Notification': Notification, 'Task': Task}
+
+
+@app.shell_context_processor
+def run():
+    app.run()
+
+
+if __name__ == '__main__':
+    app.run()
